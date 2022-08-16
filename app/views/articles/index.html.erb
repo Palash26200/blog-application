@@ -1,0 +1,33 @@
+<h1>Articles lists</h1>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @articles.each do |article| %>
+            <tr>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td>
+                <button class="btn btn-danger me2"><%= link_to 'Delete', article_path(article),data:{
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure ?"
+                }, class:"text-white" %></button> 
+                <button class="btn btn-warning"><a class="text-white" href="/articles/<%= article.id %>/edit">Edit</a></button>
+                <button class="btn btn-primary"><a href="<%= article_path(article) %>" class="text-white">Show</a></button>
+            </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+    <button class="mt-2 btn btn-success"><%= link_to "Add new article", new_article_path, class: "text-white" %></button>
+
+</div>
