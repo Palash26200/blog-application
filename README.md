@@ -2,3 +2,4 @@
 * rails db:migrate
 * rails db:rollback
 * rails routes --expanded
+* rails g migration create_users
