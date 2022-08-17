@@ -1,3 +1,10 @@
-<% flash.each do |name,msg| %>
-    <h4 class="text-success"><%= msg %></h4>
-<% end %>
+<div class="container">
+    <% flash.each do |name,msg| %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h4 ><%= msg %></h4>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <% end %>
+</div>
