@@ -4,3 +4,4 @@
 * rails routes --expanded
 * rails g migration create_users
 * user.articles << article
+* rails routes --expanded | grep edit
