@@ -9,19 +9,30 @@
       <li class="nav-item">
         <%= link_to "Bloggers", users_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'New Articles', new_article_path, class: "nav-link" %>
-      </li>
+  
       <li class="nav-item">
         <%= link_to 'Article List', articles_path, class: "nav-link" %>
       </li>
       
       <% if logged_in? %>
+
         <li class="nav-item">
-          <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
+          <%= link_to 'New Articles', new_article_path, class: "nav-link" %>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Profile [ <%= current_user.username %> ]
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to "View your profile", user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Delete your profile", user_path(current_user), class: "dropdown-item text-danger", data: {turbo_method: :delete, turbo_confirm: "Your are article also gonna be deleted "} %>
+          </div>
+        </li>
+
         <li class="nav-item">
-          <%= link_to "Log out", logout_path, class: "nav-link", data:{turbo_method: :delete} %>
+          <%= link_to "Log out", logout_path, class: "nav-link", data: { turbo_method: :delete} %> 
         </li>
       <% else %>
         <li class="nav-item">
