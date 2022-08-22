@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
+        debugger
         # flash[:notice] = "ok"
         # render plain: params[:article]
         @article = Article.new(article_params)
@@ -54,7 +55,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title,:description)
+        params.require(:article).permit(:title,:description, category_ids: [])
     end
 
     def require_same_user
