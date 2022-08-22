@@ -13,6 +13,19 @@
       <li class="nav-item">
         <%= link_to 'Article List', articles_path, class: "nav-link" %>
       </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu">
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to "New Category", new_category_path, class: "dropdown-item" %>
+          <% end %>
+          <%= link_to "View Categories", categories_path, class: "dropdown-item" %>
+          </div>
+      </li>
+
       
       <% if logged_in? %>
 
