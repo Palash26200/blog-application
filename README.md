@@ -10,3 +10,4 @@
 * rails g test_unit:scaffold category
 * rails test test/controllers
 * rails test test/controllers/categories_controller_test.rb
+* rails g integration_test create_category
