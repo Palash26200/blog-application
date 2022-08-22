@@ -7,3 +7,6 @@
 * rails routes --expanded | grep edit
 * user.admin?
 * user.toggle!(:admin)
+* rails g test_unit:scaffold category
+* rails test test/controllers
+* rails test test/controllers/categories_controller_test.rb
