@@ -11,3 +11,4 @@
 * rails test test/controllers
 * rails test test/controllers/categories_controller_test.rb
 * rails g integration_test create_category
+* rails g integration_test list_categories
